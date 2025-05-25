@@ -32,4 +32,5 @@ Pie de página con:
 - **React**: Librería para construir interfaces de usuario.
 - **Tailwind CSS**: Utilizado para estilizar la interfaz rápidamente.
 - **Framer Motion**: Añade animaciones suaves a los elementos de la UI.
-- **Bootstrap Icons**: Para los íconos sociales.# M4-Sprint1
+- **Bootstrap Icons**: Para los íconos sociales.
+- ## M4-Sprint1
