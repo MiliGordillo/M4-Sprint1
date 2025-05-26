@@ -2,7 +2,7 @@
 
 Este proyecto es una aplicación web hecha con **React** que presenta un adelanto interactivo del nuevo álbum de LISA: **ALTER EGO**. La interfaz permite escuchar fragmentos de canciones, ver una animación de fondo y acceder a enlaces de plataformas como Spotify y Apple Music.
 
-## 🧩 Componentes Principales
+## Componentes Principales
 
 ### `Header.jsx`
 Contiene la cabecera de la aplicación con:
@@ -27,7 +27,7 @@ Pie de página con:
 - Enlaces a redes sociales (Instagram, X/Twitter, YouTube).
 - Derechos de autor de LISA (2025).
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **React**: Librería para construir interfaces de usuario.
 - **Tailwind CSS**: Utilizado para estilizar la interfaz rápidamente.
