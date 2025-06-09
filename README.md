@@ -34,4 +34,4 @@ Pie de página con:
 - **Tailwind CSS**: Utilizado para estilizar la interfaz rápidamente.
 - **Framer Motion**: Añade animaciones suaves a los elementos de la UI.
 - **Bootstrap Icons**: Para los íconos sociales.
--**HTML5 Audio API**: Control personalizado de audio para previews musicales.
+- **HTML5 Audio API**: Control personalizado de audio para previews musicales.
