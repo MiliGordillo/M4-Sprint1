@@ -11,14 +11,15 @@ Contiene la cabecera de la aplicación con:
 
 ### `Main.jsx`
 Componente principal que organiza la vista en dos columnas:
-- Columna izquierda: contiene el componente `AlbumList`.
+- Columna izquierda: contiene el componente `AlbumList` que lista las canciones y  controla la reproducción.
 - Columna derecha: imagen animada de Lisa.
 - Fondo con una imagen visual llamativa.
 
 ### `AlbumList.jsx`
 Lista de canciones del álbum con las siguientes funcionalidades:
 - Muestra una lista de temas con título y duración.
-- Botón **"Escuchar ahora"** que simula la reproducción de una canción.
+- Botón **"Escuchar ahora"**  para reproducir un adelanto corto (preview) de cada canción.
+- Barra de progreso visual que indica el avance de la reproducción.
 - Animaciones con `framer-motion`.
 - Enlaces a Spotify y Apple Music para escuchar el álbum completo.
 
@@ -33,4 +34,4 @@ Pie de página con:
 - **Tailwind CSS**: Utilizado para estilizar la interfaz rápidamente.
 - **Framer Motion**: Añade animaciones suaves a los elementos de la UI.
 - **Bootstrap Icons**: Para los íconos sociales.
-- ## M4-Sprint1
+-**HTML5 Audio API**: Control personalizado de audio para previews musicales.
