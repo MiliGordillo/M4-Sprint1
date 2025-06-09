@@ -40,11 +40,30 @@ export default function AlbumList() {
     };
 
     audio.addEventListener("timeupdate", updateProgress);
-
     return () => {
       audio.removeEventListener("timeupdate", updateProgress);
     };
-  }, []);
+  }, [currentSong]);
+
+  const handlePlay = (song) => {
+    const audio = audioRef.current;
+
+    if (currentSong === song.title) {
+      audio.pause();
+      audio.currentTime = 0;
+      setProgress(0);
+      audio.play();
+    } else {
+      if (audio) {
+        audio.pause();
+        audio.src = song.src;
+        audio.currentTime = 0;
+        audio.play();
+        setProgress(0);
+      }
+      setCurrentSong(song.title);
+    }
+  };
 
   return (
     <motion.section
@@ -61,7 +80,7 @@ export default function AlbumList() {
 
       {currentSong && (
         <div className="text-center mb-4">
-          <p className="text-pink-300 font-semibold">🎧 Reproduciendo: {currentSong}</p>
+          <p className="text-pink-300 font-semibold">{currentSong}</p>
         </div>
       )}
 
@@ -79,22 +98,16 @@ export default function AlbumList() {
                 <span>{song.duration}</span>
               </div>
               <button
-                onClick={() => {
-                  setCurrentSong(song.title);
-                  if (audioRef.current) {
-                    audioRef.current.src = song.src;
-                    audioRef.current.currentTime = 0;
-                    audioRef.current.play();
-                    setProgress(0);
-                  }
-                }}
+                onClick={() => handlePlay(song)}
+                aria-label={`Reproducir adelanto de ${song.title}`}
                 className="w-full bg-pink-600 hover:bg-pink-500 text-white px-4 py-1 rounded-full text-sm transition relative overflow-hidden"
               >
-                Escuchar ahora
+                {isPlaying ? "🔊 Reproduciendo" : "▶️ Escuchar ahora"}
                 {isPlaying && (
-                  <span
-                    className="absolute bottom-0 left-0 h-1 bg-pink-300 transition-all duration-200"
-                    style={{ width: `${progress}%` }}
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-1 bg-pink-300"
+                    animate={{ width: `${progress}%` }}
+                    transition={{ ease: "linear", duration: 0.2 }}
                   />
                 )}
               </button>
@@ -132,4 +145,5 @@ export default function AlbumList() {
     </motion.section>
   );
 }
+
 
